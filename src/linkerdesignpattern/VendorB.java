@@ -1,18 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package linkerdesignpattern;
-
 import java.util.ArrayList;
 
-/**
- *
- * @author Syed Ghazanfer Anwar
- */
 public class VendorB extends Observer {
-
+        /** 
+    * @desc This is vendor b class. this is a book Vendor which is being updated about the catalog changes
+    * @author Salman Arshad, Syed Ghazanfer Anwar and Asim Iqbal
+    */
     VendorB() {
         Source.getSource().attach(this);
     }

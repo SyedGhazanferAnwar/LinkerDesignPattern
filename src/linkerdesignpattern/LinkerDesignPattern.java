@@ -3,6 +3,10 @@ package linkerdesignpattern;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 public class LinkerDesignPattern {
+        /** 
+    * @desc This is the main implementation of the Linker design pattern
+    * @author Salman Arshad, Syed Ghazanfer Anwar and Asim Iqbal
+    */
 
     public static void main(String[] args) throws InterruptedException {
         // declaring actuator
@@ -22,21 +26,21 @@ public class LinkerDesignPattern {
         // Adding books to store 
         System.out.println("Adding books to store...");
         System.out.println("********************************************");
-        actuator.addTicket(book1);
+        actuator.addBook(book1);
        TimeUnit.SECONDS.sleep(2);
        
         System.out.println("********************************************");
-        actuator.addTicket(book2);
+        actuator.addBook(book2);
         TimeUnit.SECONDS.sleep(2);
 
         System.out.println("********************************************");
-        actuator.addTicket(book3);
+        actuator.addBook(book3);
         TimeUnit.SECONDS.sleep(2);
         
         
         System.out.println("********************************************");        
-        System.out.print("Now Buying Harry potter..");
-        actuator.buyTicket(book2);
+        System.out.println("Now Buying Harry potter..");
+        actuator.sellBook(book2);
     }
     
 }

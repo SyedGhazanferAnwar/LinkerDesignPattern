@@ -6,13 +6,13 @@ import java.util.ArrayList;
 public class Actuator {
     Source source=Source.getSource();
     
-    public void addTicket(Book ticket){
+    public void addBook(Book ticket){
         ArrayList<Object> tickets=source.getArray();
         tickets.add(ticket);
         source.setArray(tickets);
     }
     
-    public void buyTicket(Book book){
+    public void sellBook(Book book){
         ArrayList<Object> books=source.getArray();
         for(int i=0;i<books.size();i++){
             if(((Book)books.get(i)).getId() ==(book.getId())){
