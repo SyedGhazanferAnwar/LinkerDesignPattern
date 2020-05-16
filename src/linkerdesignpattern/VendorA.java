@@ -18,11 +18,10 @@ public class VendorA extends Observer {
     }
 
     @Override
-    public void update(ArrayList<Object> array) {
-        for (int i = 0; i < array.size(); i++) {
-            Ticket ticket=(Ticket)array.get(i);
-            System.out.println("ID: "+ticket.id+"    isAvailble: "+ticket.isAvailable+ "   price: "+ticket.price);
-        }
+    public void update(ArrayList<Object> books) {
+        for (int i = 0; i < books.size(); i++) {
+            Book book=(Book)books.get(i);
+            System.out.println("Vendor A getting notified about new catalog-----"+book.toString());
     }
-
+    }
 }

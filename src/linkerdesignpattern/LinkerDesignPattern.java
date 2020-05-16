@@ -1,30 +1,42 @@
 package linkerdesignpattern;
 
 import java.util.Scanner;
-
+import java.util.concurrent.TimeUnit;
 public class LinkerDesignPattern {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+        // declaring actuator
         Actuator actuator=new Actuator();
-        VendorA vendora=new VendorA();
-        VendorB vendorb=new VendorB();
-        int z=124;
-        Ticket ticket=new Ticket("123",true,50);
-        actuator.addTicket(ticket);
-        Scanner sc=new Scanner(System.in);
-        while(true){
-            int opt=sc.nextInt();
-            
-            switch(opt){
-                case 1:
-                    actuator.addTicket(new Ticket(z+++"",true,50));
-                    break;
-                case 2:
-                    actuator.buyTicket(ticket);
-                 
-            }
         
-        }
+        // declaring vendors who are selling books from source
+        System.out.println("Initializing Vendors...");
+        VendorA vendora = new VendorA();
+        VendorB vendorb = new VendorB();
+
+        //Initializing some books to to added in source for selling
+        System.out.println("Initializing books...");
+        Book book1  = new Book(1,"The Shining",true,100,"65K68654T6","Stephen King");      
+        Book book2  = new Book(2,"Harry Potter",true,150,"95O68694I8","George W. Bush");
+        Book book3  = new Book(3,"Alex Cross",true,200,"95O68694I8", "James Patterson");
+        
+        // Adding books to store 
+        System.out.println("Adding books to store...");
+        System.out.println("********************************************");
+        actuator.addTicket(book1);
+       TimeUnit.SECONDS.sleep(2);
+       
+        System.out.println("********************************************");
+        actuator.addTicket(book2);
+        TimeUnit.SECONDS.sleep(2);
+
+        System.out.println("********************************************");
+        actuator.addTicket(book3);
+        TimeUnit.SECONDS.sleep(2);
+        
+        
+        System.out.println("********************************************");        
+        System.out.print("Now Buying Harry potter..");
+        actuator.buyTicket(book2);
     }
     
 }

@@ -6,20 +6,20 @@ import java.util.ArrayList;
 public class Actuator {
     Source source=Source.getSource();
     
-    public void addTicket(Ticket ticket){
+    public void addTicket(Book ticket){
         ArrayList<Object> tickets=source.getArray();
         tickets.add(ticket);
         source.setArray(tickets);
     }
     
-    public void buyTicket(Ticket _ticket){
-        ArrayList<Object> tickets=source.getArray();
-        for(int i=0;i<tickets.size();i++){
-            if(((Ticket)tickets.get(i)).id.equals(_ticket.id)){
-                ((Ticket)tickets.get(i)).isAvailable=false;
+    public void buyTicket(Book book){
+        ArrayList<Object> books=source.getArray();
+        for(int i=0;i<books.size();i++){
+            if(((Book)books.get(i)).getId() ==(book.getId())){
+                ((Book)books.get(i)).setIsAvailable(false);
                 break;
             }
         }
-        source.setArray(tickets);
+        source.setArray(books);
     }
 }

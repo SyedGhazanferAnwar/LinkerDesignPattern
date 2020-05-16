@@ -2,6 +2,12 @@ package linkerdesignpattern;
 
 import java.util.ArrayList;
 import java.util.List;
+/** 
+  * @desc This s the source class. This class is responsible for all the content that needs to be distributed 
+  * among all the other components 
+  * Actuators consumes this class
+  * @author Salman Arshad, Syed Ghazanfer Anwar and Asim Iqbal
+*/
 
 public class Source {
 
