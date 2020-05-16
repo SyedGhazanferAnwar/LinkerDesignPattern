@@ -38,9 +38,9 @@ public class LinkerDesignPattern {
         TimeUnit.SECONDS.sleep(2);
         
         
-        System.out.println("********************************************");        
-        System.out.println("Now Buying Harry potter..");
-        actuator.sellBook(book2);
+//        System.out.println("********************************************");        
+//        System.out.println("Now selling Harry potter..");
+//        actuator.sellBook(book2);
     }
     
 }

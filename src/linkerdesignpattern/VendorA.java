@@ -24,13 +24,24 @@ public class VendorA extends Observer {
             Book book=(Book)books.get(i);
             System.out.println("Vendor A getting notified about new catalog-----"+book.toString());
             if(book.getName().equals("Harry Potter") && book.IsAvailable()){
-                System.out.println("*****Vendor A is notified that Harry Potter is added in catalog. So he is selling it");
-                sellBook(book);   
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(100);   
+                            sellBook(book);
+                        } catch (InterruptedException ex) {
+                            Logger.getLogger(VendorA.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                }).start();
             }
             
         }
     }
     void sellBook(Book book){
+        System.out.println("********************************************");
+        System.out.println("Now selling "+book.getName());
         Actuator actuator = new Actuator();
         actuator.sellBook(book);
     }
